@@ -71,7 +71,7 @@ nmap <leader>w :w!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a
 set ttymouse=xterm2
-set clipboard=unnamed
+set clipboard=unnamedplus
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
@@ -168,8 +168,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -424,6 +424,10 @@ endfunction
 noremap <silent> <leader>mw :call MarkWindowSwap()<CR>
 noremap <silent> <leader>pw :call DoWindowSwap()<CR>
 
-set transparency=10
+if exists("&transparency")
+    set transparency=10
+endif
 
 let g:Imap_UsePlaceHolders = 0
+
+set tags+=tags,~/ros_workspace/src/tags
